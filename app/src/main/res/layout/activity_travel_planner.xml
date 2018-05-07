@@ -40,25 +40,34 @@
       android:layout_height="wrap_content"
       android:layout_marginTop="10dp"/>
 
+    <Button
+        android:id="@+id/calculate"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:onClick="calculate"
+        android:text="@string/calculate"/>
+
+
+  <Button
+      android:id="@+id/newTab"
+      android:layout_width="208dp"
+      android:layout_height="wrap_content"
+      android:onClick="calculateInNew"
+      android:text="New Tab"/>
+
   <Button
       android:layout_width="200dp"
       android:layout_height="50dp"
       android:layout_marginTop="20dp"
-      android:text="@string/calculate"
-      android:onClick="calculate"/>
-
-
-  <Button
-      android:layout_width="200dp"
-      android:layout_height="50dp"
-      android:layout_marginTop="20dp"
-      android:text="Capture"
-      android:onClick="capture"/>
+      android:onClick="capture"
+      android:text="Capture"/>
 
   <ImageView
+      android:id="@+id/capturedImage"
       android:layout_width="200dp"
       android:layout_height="50dp"
-      android:layout_marginTop="20dp"
-      android:id="@+id/capturedImage"/>
+      android:layout_marginTop="20dp"/>
+
 </LinearLayout>
 

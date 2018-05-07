@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context="android.bootcamp.travelplanner.TimeActivity">
     <TextView
-        android:id="@+id/time"
+        android:id="@+id/intentTime"
         android:gravity="center_horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

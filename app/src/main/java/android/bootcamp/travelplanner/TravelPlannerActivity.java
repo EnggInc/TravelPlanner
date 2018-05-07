@@ -35,7 +35,7 @@ public class TravelPlannerActivity extends Activity {
     resultView.setText(resultString);
 
     Intent intent = new Intent(this, TimeActivity.class);
-    intent.putExtra("time", result);
+    intent.putExtra("intentTime", resultString);
 //    startActivityForResult(intent, TIME_ACTIVITY_REQUEST_CODE);
 
 
@@ -51,6 +51,31 @@ public class TravelPlannerActivity extends Activity {
     System.out.println("******************" + travelPlanList.get(0).getVelocity());
 
   }
+
+  public void calculateInNew(View view) {
+    int distance = Integer.parseInt(((EditText) findViewById(R.id.distance)).getText().toString());
+    int velocity = Integer.parseInt(((EditText) findViewById(R.id.velocity)).getText().toString());
+    int result = distance / velocity;
+
+
+    Intent intent = new Intent(this, TimeActivity.class);
+    intent.putExtra("time", result);
+    startActivityForResult(intent,TIME_ACTIVITY_REQUEST_CODE);
+
+
+    final TravelPlannerDatabase db = Room.databaseBuilder(getApplicationContext(),
+            TravelPlannerDatabase.class, "travelplanner").allowMainThreadQueries().build();
+
+
+    db.travelPlanDao().insertAll(new TravelPlan(distance, velocity, result));
+
+    List<TravelPlan> travelPlanList =  db.travelPlanDao().getAll();
+    System.out.println("******************" + travelPlanList.get(0).getDistance());
+    System.out.println("******************" + travelPlanList.get(0).getTime());
+    System.out.println("******************" + travelPlanList.get(0).getVelocity());
+
+  }
+
 
   @Override
   protected void onActivityResult(int requestCode, int resultCode, Intent data) {

@@ -27,6 +27,15 @@ public class TravelPlannerActivityTest {
         onView(withId(R.id.calculate)).perform(click());
         onView(withId(R.id.time)).check(matches(withText(("33"))));
 
-        //.check(matches(withText("333")));
+    }
+
+
+   // @org.junit.Test
+    public void validateEditTextInNew() {
+        //onView(withId(R.id.distance)).perform(typeText("333"));
+        //onView(withId(R.id.velocity)).perform(typeText("10"));
+
+        onView(withId(R.id.newTab)).perform(click());
+        onView(withId(R.id.intentTime)).check(matches(withText(("33"))));
     }
 }
