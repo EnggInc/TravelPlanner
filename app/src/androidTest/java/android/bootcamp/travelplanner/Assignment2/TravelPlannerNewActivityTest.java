@@ -1,4 +1,4 @@
-package android.bootcamp.travelplanner;
+package android.bootcamp.travelplanner.Assignment2;
 
 
 import static android.support.test.espresso.Espresso.onView;
@@ -9,7 +9,7 @@ import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 
 // Tests for MainActivity
-public class TravelPlannerActivityTest {
+public class TravelPlannerNewActivityTest {
 
     // Preferred JUnit 4 mechanism of specifying the activity to be launched before each test
     @org.junit.Rule
@@ -20,22 +20,13 @@ public class TravelPlannerActivityTest {
     // Types the text "Hello" into the EditText
     // Verifies the EditText has text "Hello"
     @org.junit.Test
-    public void validateEditText() {
-        onView(withId(R.id.distance)).perform(typeText("333"));
-        onView(withId(R.id.velocity)).perform(typeText("10"));
+    public void validateEditTextNewTab() {
+        onView(android.support.test.espresso.matcher.ViewMatchers.withId(android.bootcamp.travelplanner.R.id.distance)).perform(typeText("333"));
+        onView(android.support.test.espresso.matcher.ViewMatchers.withId(android.bootcamp.travelplanner.R.id.velocity)).perform(typeText("10"));
 
-        onView(withId(R.id.calculate)).perform(click());
-        onView(withId(R.id.time)).check(matches(withText(("33"))));
+        onView(android.support.test.espresso.matcher.ViewMatchers.withId(android.bootcamp.travelplanner.R.id.newTab)).perform(click());
+        onView(android.support.test.espresso.matcher.ViewMatchers.withId(android.bootcamp.travelplanner.R.id.intentTime)).check(matches(withText(("33"))));
 
     }
 
-
-   // @org.junit.Test
-    public void validateEditTextInNew() {
-        //onView(withId(R.id.distance)).perform(typeText("333"));
-        //onView(withId(R.id.velocity)).perform(typeText("10"));
-
-        onView(withId(R.id.newTab)).perform(click());
-        onView(withId(R.id.intentTime)).check(matches(withText(("33"))));
-    }
 }

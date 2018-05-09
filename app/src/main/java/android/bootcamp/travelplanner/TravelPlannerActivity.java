@@ -34,8 +34,8 @@ public class TravelPlannerActivity extends Activity {
     String resultString = String.valueOf(result);
     resultView.setText(resultString);
 
-    Intent intent = new Intent(this, TimeActivity.class);
-    intent.putExtra("intentTime", resultString);
+//    Intent intent = new Intent(this, TimeActivity.class);
+//    intent.putExtra("intentTime", resultString);
 //    startActivityForResult(intent, TIME_ACTIVITY_REQUEST_CODE);
 
 
@@ -52,11 +52,14 @@ public class TravelPlannerActivity extends Activity {
 
   }
 
+
+
+
   public void calculateInNew(View view) {
     int distance = Integer.parseInt(((EditText) findViewById(R.id.distance)).getText().toString());
     int velocity = Integer.parseInt(((EditText) findViewById(R.id.velocity)).getText().toString());
     int result = distance / velocity;
-
+    String resultString = String.valueOf(result);
 
     Intent intent = new Intent(this, TimeActivity.class);
     intent.putExtra("time", result);

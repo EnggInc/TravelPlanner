@@ -22,10 +22,11 @@
         android:inputType="number"/>
 
     <Button
+        android:id="@+id/plusBuffer"
         android:layout_width="200dp"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
-        android:text="@string/calculate"
-        android:onClick="calculateWithBuffer"/>
+        android:onClick="calculateWithBuffer"
+        android:text="@string/calculate"/>
 
 </LinearLayout>
