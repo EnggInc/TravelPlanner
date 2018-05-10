@@ -34,7 +34,7 @@ public class TravelPlannerActivity extends Activity {
     String resultString = String.valueOf(result);
     resultView.setText(resultString);
 
-//    Intent intent = new Intent(this, TimeActivity.class);
+//    Intent intent = new Intent(this, TimeActivity.cldatabaseBuilderass);
 //    intent.putExtra("intentTime", resultString);
 //    startActivityForResult(intent, TIME_ACTIVITY_REQUEST_CODE);
 
